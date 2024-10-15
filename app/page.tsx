@@ -1,10 +1,9 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+import Tasks from "./Components/Tasks/Tasks";
+import { useGlobalState } from "./context/globalProvider";
 
 export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div>Hello World</div>
-    </main>
-  );
+  const { tasks } = useGlobalState();
+
+  return <Tasks title="All Tasks" tasks={tasks} />;
 }
