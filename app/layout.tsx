@@ -29,7 +29,9 @@ export default function RootLayout({
   const { userId } = auth();
 
   return (
-    <ClerkProvider>
+    <ClerkProvider
+      publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
+    >
       <html lang="en">
         <head>
           <link
